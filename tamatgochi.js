@@ -1,8 +1,8 @@
 const tamogotchi = {
     name: 'egg',
-    meal: 11,
-    energy: 12,
-    mood: 11,
+    meal: 4,
+    energy:  2,
+    mood: 3,
     getStatus: function () {
         let meal2 = this.meal
         let energy2 = this.energy
@@ -24,12 +24,16 @@ const tamogotchi = {
         }
         else this.mood = `Мне весело(${mood2})`;
 
-        if (meal2 < 0 || energy2 < 0 || mood2 < 0) {
-            console.log(`[Имя] умер =(`)
+        if (meal2 <= 0 || energy2 <= 0 || mood2 <= 0) {
+            console.log(`${this.name} умер =(`)
             return
         }
-        if (meal2 > 5 || energy2 > 5 || mood2 > 5) {
+        if (meal2 > 8 && energy2 > 8 && mood2 > 8) {
             console.log(`Я балдею, это самое главное =)`)
+            return
+        }
+        if (meal2 > 8 || energy2 > 8 || mood2 > 8) {
+            console.log(`Я частично балдею, можно и лучше =)`)
             return
         }
         console.log(`Имя: ${this.name}, Еда: ${this.meal}, Энергия: ${this.energy}, Настроение: ${this.mood}`)
